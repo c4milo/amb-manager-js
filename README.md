@@ -1,6 +1,6 @@
 ## ALMA Monitor Bus Manager bindings for Node.js
 
-## Prerequesites
+## Prerequisites
 * node 0.10.x
 * npm install node-gyp -g
 * ACS-10.2
