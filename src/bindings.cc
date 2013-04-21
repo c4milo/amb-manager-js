@@ -38,4 +38,42 @@ namespace AmbManagerJs {
     }
 
     AmbManager::AmbManager() : ObjectWrap() {}
+    AmbManager::~AmbManager() {}
+
+    Handle<Value> AmbManager::New(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = new AmbManager();
+        Local<Object> obj = args.This();
+        manager->Wrap(obj);
+
+        return obj;
+    }
+
+    Handle<Value> AmbManager::Flush(const Arguments& args) {
+        return Undefined();
+    }
+
+    Handle<Value> AmbManager::Reset(const Arguments& args) {
+        return Undefined();
+    }
+
+    Handle<Value> AmbManager::GetNumberOfChannels(const Arguments& args) {
+        return Undefined();
+    }
+
+    Handle<Value> AmbManager::GetNodeSerialNumber(const Arguments& args) {
+        return Undefined();
+    }
+
+    Handle<Value> AmbManager::GetNodesList(const Arguments& args) {
+        return Undefined();
+    }
+
+    Handle<Value> AmbManager::Monitor(const Arguments& args) {
+        return Undefined();
+    }
+
+    Handle<Value> AmbManager::Command(const Arguments& args) {
+        return Undefined();
+    }
 } //namespace AmbManagerJs
