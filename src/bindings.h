@@ -28,7 +28,7 @@ using namespace node;
 namespace AmbManagerJs {
     class AmbManager : public ObjectWrap {
         public:
-            static void Initialize();
+            static void Initialize(Handle<Object> target);
             AmbManager();
             virtual ~AmbManager();
 
@@ -83,7 +83,8 @@ namespace AmbManagerJs {
             static Handle<Value> Command(const Arguments& args);
         private:
             StandaloneAmbManager* manager;
-    }
-}
+            static Persistent<FunctionTemplate> constructor_template;
+    }; //class definition
+} //namespace
 
 #endif  // SRC_BINDINGS_H
