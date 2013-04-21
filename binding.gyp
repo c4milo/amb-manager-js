@@ -1,7 +1,7 @@
 {
   'targets': [
     {
-      'target_name': 'amb-manager',
+      'target_name': 'amb_manager',
       'defines': ['_POSIX_THREADS', '_POSIX_THREAD_SAFE_FUNCTIONS', '_REENTRANT', 'ACE_HAS_AIO_CALLS', 'DEBUG', 'CCS_LIGHT', 'POSN_DUMP'],
       'include_dirs': [
         '/home/dev/CURRENTLY_MOD/StandaloneAmbManager/include'

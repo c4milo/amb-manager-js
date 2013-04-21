@@ -26,8 +26,20 @@ namespace AmbManagerJs {
 
         t->InstanceTemplate()->SetInternalFieldCount(1);
 
-        //NODE_SET_PROTOTYPE_METHOD(t, "flush",
-         //                             AmbManager::Flush);
+        NODE_SET_PROTOTYPE_METHOD(t, "flush",
+                                      AmbManager::Flush);
+        NODE_SET_PROTOTYPE_METHOD(t, "reset",
+                                      AmbManager::Reset);
+        NODE_SET_PROTOTYPE_METHOD(t, "getNumberOfChannels",
+                                      AmbManager::GetNumberOfChannels);
+        NODE_SET_PROTOTYPE_METHOD(t, "getNodeSerialNumber",
+                                      AmbManager::GetNodeSerialNumber);
+        NODE_SET_PROTOTYPE_METHOD(t, "getNodesList",
+                                      AmbManager::GetNodesList);
+        NODE_SET_PROTOTYPE_METHOD(t, "monitor",
+                                      AmbManager::Monitor);
+        NODE_SET_PROTOTYPE_METHOD(t, "command",
+                                      AmbManager::Command);
 
         constructor_template = Persistent<FunctionTemplate>::New(t);
         constructor_template->SetClassName(String::NewSymbol("AmbManager"));
