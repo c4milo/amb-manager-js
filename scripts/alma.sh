@@ -1,3 +1,4 @@
+#Copy this file to /etc/profile.d/alma.sh and source it
 # User specific aliases and functions
 source /alma/ACS-10.2/ACSSW/config/.acs/.bash_profile.acs
 
