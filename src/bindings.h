@@ -20,6 +20,7 @@
 #define SRC_BINDINGS_H_
 
 #include <StandaloneAmbManager.h>
+#include "amb-manager.h"
 
 using namespace v8;
 using namespace node;
