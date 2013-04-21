@@ -47,7 +47,14 @@ namespace AmbManagerJs {
             */
             static Handle<Value> Reset(const Arguments& args);
 
+            /**
+            * Returns number of channels defined in the AMB
+            */
             static Handle<Value> GetNumberOfChannels(const Arguments& args);
+
+            /**
+            * Returns node serial number
+            */
             static Handle<Value> GetNodeSerialNumber(const Arguments& args);
 
             /**
@@ -60,14 +67,17 @@ namespace AmbManagerJs {
             * Retrieves monitor data from a
             * specific CAN address and timing event as follows:
             *
-            * a) From the next timing event if not TE is specificed
+            * a) From the next timing event if any TE is specificed
             * b) From the specified timing event if a target TE was specified
             */
             static Handle<Value> Monitor(const Arguments& args);
 
 
             /**
+            * Sends control commands to a specific node and channel as follows:
             *
+            * a) From the next timing event if any TE is specificed
+            * b) From the specified timing event if a target TE was specified
             */
             static Handle<Value> Command(const Arguments& args);
         private:
