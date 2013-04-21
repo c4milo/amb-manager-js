@@ -7,7 +7,7 @@
         '/home/dev/CURRENTLY_MOD/StandaloneAmbManager/include'
       ],
       'cflags': [ '-Wall', '-Wno-unused-parameter'],
-      'cflags_cc': [ '-fPIC', '-fcheck-new', '-fexceptions', '-frtti', ''],
+      'cflags_cc': [ '-fPIC', '-fcheck-new', '-fexceptions', '-frtti'],
       #'ldflags': [ '-pthread', '-rdynamic' ],
       'sources': [
         'src/bindings.cc',
