@@ -1,5 +1,9 @@
 ## ALMA Monitor Bus Manager bindings for Node.js
 
+The purpose of the ALMA control system is to monitor and control the ALMA telescope and to execute scheduling blocks from approved scientific observing projects.  To monitor the ALMA telescope means to keep track of its state, diagnosis problems, and report anomalies.  To control the ALMA telescope means to start and stop it and to command it to do useful work including observations, calibrations and diagnostics.  Monitoring and controlling the telescope are continuous activities, regardless of whether the telescope is engaged in scientific observing. 
+
+Excerpt from: http://almasw.hq.eso.org/almasw/pub/CONTROL/LiveDesignDocuments/COMP-70.35.00.00-004-I-DSN.docx
+
 ## Installation
 Before using this module please make sure you have installed the following dependencies:
 
