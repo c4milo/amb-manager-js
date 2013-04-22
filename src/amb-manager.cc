@@ -32,5 +32,10 @@ namespace AmbManagerJs {
         context->Global()->Set(String::NewSymbol("AmbManager"), target);
     }
 
-    NODE_MODULE(amb_manager, InitializeAmbManager)
+    extern "C" void init (Handle<Object> target) {
+        HandleScope scope;
+        InitializeAmbManager(target);
+    }
+
+    NODE_MODULE(amb_manager, init)
 } //namespace AmbManagerJS

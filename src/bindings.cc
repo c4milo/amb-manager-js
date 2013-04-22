@@ -50,42 +50,63 @@ namespace AmbManagerJs {
     }
 
     AmbManager::AmbManager() : ObjectWrap() {}
-    AmbManager::~AmbManager() {}
+    AmbManager::~AmbManager() {
+        if (interface != NULL) {
+            delete interface;
+        } 
+    }
 
     Handle<Value> AmbManager::New(const Arguments& args) {
         HandleScope scope;
         AmbManager *manager = new AmbManager();
+
+        manager->interface = new StandaloneAmbManager();
+
         Local<Object> obj = args.This();
         manager->Wrap(obj);
 
-        return obj;
+        return scope.Close(obj);
     }
 
     Handle<Value> AmbManager::Flush(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = ObjectWrap::Unwrap<AmbManager>(args.This());
         return Undefined();
     }
 
     Handle<Value> AmbManager::Reset(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = ObjectWrap::Unwrap<AmbManager>(args.This());
         return Undefined();
     }
 
     Handle<Value> AmbManager::GetNumberOfChannels(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = ObjectWrap::Unwrap<AmbManager>(args.This());
         return Undefined();
     }
 
     Handle<Value> AmbManager::GetNodeSerialNumber(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = ObjectWrap::Unwrap<AmbManager>(args.This());
         return Undefined();
     }
 
     Handle<Value> AmbManager::GetNodesList(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = ObjectWrap::Unwrap<AmbManager>(args.This());
         return Undefined();
     }
 
     Handle<Value> AmbManager::Monitor(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = ObjectWrap::Unwrap<AmbManager>(args.This());
         return Undefined();
     }
 
     Handle<Value> AmbManager::Command(const Arguments& args) {
+        HandleScope scope;
+        AmbManager *manager = ObjectWrap::Unwrap<AmbManager>(args.This());
         return Undefined();
     }
 } //namespace AmbManagerJs
