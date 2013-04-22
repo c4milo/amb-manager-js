@@ -51,16 +51,16 @@ namespace AmbManagerJs {
 
     AmbManager::AmbManager() : ObjectWrap() {}
     AmbManager::~AmbManager() {
-        if (interface != NULL) {
+        /*if (interface != NULL) {
             delete interface;
-        } 
+        } */
     }
 
     Handle<Value> AmbManager::New(const Arguments& args) {
         HandleScope scope;
         AmbManager *manager = new AmbManager();
 
-        manager->interface = new StandaloneAmbManager();
+        //manager->interface = new StandaloneAmbManager();
 
         Local<Object> obj = args.This();
         manager->Wrap(obj);

@@ -19,7 +19,7 @@
 #ifndef SRC_BINDINGS_H_
 #define SRC_BINDINGS_H_
 
-#include <StandaloneAmbManager.h>
+#include <ambManagerImpl.h>
 #include "amb-manager.h"
 
 using namespace v8;
@@ -82,7 +82,7 @@ namespace AmbManagerJs {
             */
             static Handle<Value> Command(const Arguments& args);
         private:
-            StandaloneAmbManager* interface;
+            //StandaloneAmbManager* interface;
             static Persistent<FunctionTemplate> constructor_template;
     }; //class definition
 } //namespace
