@@ -45,22 +45,32 @@ namespace AmbManagerJs {
         constructor_template->SetClassName(String::NewSymbol("AmbManager"));
 
         target->Set(String::NewSymbol("AmbManager"), constructor_template->GetFunction());
-
-        //mountpoint_sym        = NODE_PSYMBOL("mountpoint");
     }
 
-    AmbManager::AmbManager() : ObjectWrap() {}
+    AmbManager::AmbManager(const Local<String>& antenna_) : ObjectWrap() {
+        HandleScope scope;
+        String::Utf8Value antenna(name);
+
+        instance = new AmbManagerImpl((const char*) antenna);
+    }
+
     AmbManager::~AmbManager() {
-        /*if (interface != NULL) {
-            delete interface;
-        } */
+        if (instance != NULL) {
+            instance->cleanUp();
+        }
     }
 
     Handle<Value> AmbManager::New(const Arguments& args) {
         HandleScope scope;
         AmbManager *manager = new AmbManager();
 
-        //manager->interface = new StandaloneAmbManager();
+        try {
+            manager->instance->initialize();
+        } catch(const acsErrTypeLifeCycle::LifeCycleExImpl& ex) {
+            //emit error with ex.what();
+        } catch(...) {
+            //emit ThrowException(String::New("Native routine threw unknown exception type"));
+        }
 
         Local<Object> obj = args.This();
         manager->Wrap(obj);

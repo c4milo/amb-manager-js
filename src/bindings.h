@@ -82,7 +82,7 @@ namespace AmbManagerJs {
             */
             static Handle<Value> Command(const Arguments& args);
         private:
-            //StandaloneAmbManager* interface;
+            const AmbManagerImpl* instance;
             static Persistent<FunctionTemplate> constructor_template;
     }; //class definition
 } //namespace
